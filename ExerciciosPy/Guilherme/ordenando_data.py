@@ -19,20 +19,20 @@ artigos = [
 'consultas': 650}
 ] 
 
-datas = sorted([time.strptime(dt["data_publicacao"], "%d/%m/%Y") for dt in artigos])
-print(datas)
-datas_em_ordem = [time.strftime("%d/%m/%Y",dataf) for dataf in datas]
-print(datas_em_ordem)
-new_artigo = []
+datas = sorted([time.strptime(dicionario["data_publicacao"], "%d/%m/%Y") for dicionario in artigos])
 
-#for datas_ordenas in datas_em_ordem:
+datasEmOrdem = [time.strftime("%d/%m/%Y",dataf) for dataf in datas]
 
-#    for item in artigos:
+newArtigo = []
 
-#        data_publi = item["data_publicacao"]
+for datasOrdenas in datasEmOrdem:
 
- #       if datas_ordenas == data_publi:
+    for item in artigos:
 
-#            new_artigo.append(item)
+        dataPubli = item["data_publicacao"]
 
-#print(new_artigo)
+        if datasOrdenas == dataPubli:
+
+            newArtigo.append(item)
+
+print(newArtigo)
